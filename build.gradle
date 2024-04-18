@@ -26,7 +26,7 @@ test {
 }
 task smoke(type: Test) {
     useTestNG() {
-        suites "src/test/resources/Smoke.xml"
+        suites "src/test/resources/${suite}.xml"
         systemProperty "browser", System.getProperty("browser")
     }
 }
