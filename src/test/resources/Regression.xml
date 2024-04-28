@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression" parallel="methods" thread-count = "2">
+    <parameter name="BaseURL" value="https://qa.koel.app/"></parameter>
+    <test name="Regression Test" preserve-order="false">
+        <classes>
+            <class name="Homework16"/>
+            <class name="Homework17"/>
+            <class name="Homework18"/>
+            <class name="Homework19"/>
+            <class name="Homework21"/>
+            <class name="Homework22"/>
+        </classes>
+    </test>
+</suite>
