@@ -18,20 +18,18 @@ public class LoginTests extends BaseTest {
 //    }
     @Test
     public void loginEmptyEmailPassword() {
-        LoginPage loginPage = new LoginPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.clickLoginBtn();
         String url = "https://qa.koel.app/";
-        Assert.assertEquals(getDriver().getCurrentUrl(), url);
+        Assert.assertEquals(driver.getCurrentUrl(), url);
     }
 
 
     @Test
     public void loginValidEmailPassword() {
         //Steps
-//        LoginPage loginPage = new LoginPage(driver);
-//        HomePage homepage = new HomePage(driver);
-        LoginPage loginPage = new LoginPage(getDriver());
-        HomePage homepage = new HomePage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
+        HomePage homepage = new HomePage(driver);
 //Step 1: Open Browser
         loginPage.provideEmail("grigore.crepciuc@testpro.io");
         loginPage.providePassword("te$t$tudent");
@@ -45,26 +43,25 @@ public class LoginTests extends BaseTest {
     @Test
     public void loginInValidEmailPassword() {
         //Steps
-        //LoginPage loginPage = new LoginPage(driver);
-        LoginPage loginPage = new LoginPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
 //Step 1: Open Browser
         loginPage.provideEmail("invalidgrigore.crepciuc@testpro.io");
         loginPage.providePassword("te$t$tudent");
         loginPage.clickLoginBtn();
 //Step 5: Expected result vs Actual
         String url = "https://qa.koel.app/";
-        Assert.assertEquals(getDriver().getCurrentUrl(),url);
+        Assert.assertEquals(driver.getCurrentUrl(),url);
     }
     @Test
     public void loginValidEmailInvalidPassword() {
         //Steps
-        LoginPage loginPage = new LoginPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
 //Step 1: Open Browser
         loginPage.provideEmail("grigore.crepciuc@testpro.io");
         loginPage.providePassword("invalidte$t$tudent");
         loginPage.clickLoginBtn();
 //Step 5: Expected result vs Actual
         String url = "https://qa.koel.app/";
-        Assert.assertEquals(getDriver().getCurrentUrl(),url);
+        Assert.assertEquals(driver.getCurrentUrl(),url);
     }
 }

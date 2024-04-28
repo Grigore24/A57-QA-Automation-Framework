@@ -55,8 +55,8 @@ public class ActionsTests extends BaseTest {
 ////////////////////////////////////////////////////////////////////////////////////////////////
     @Test
     public void playSongFromListTest()  {
-        LoginPage loginPage = new LoginPage(getDriver());
-        SongsPage songsPage = new SongsPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
+        SongsPage songsPage = new SongsPage(driver);
         loginPage.login("grigore.crepciuc@testpro.io", "te$t$tudent");
         songsPage.goToAllSongs();
         // right click on first song
@@ -83,10 +83,10 @@ public class ActionsTests extends BaseTest {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Test
     public void countSongsInsidePlaylist(){
-        LoginPage loginPage = new LoginPage(getDriver());
-        SongsPage songsPage = new SongsPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
+        SongsPage songsPage = new SongsPage(driver);
         loginPage.login("grigore.crepciuc@testpro.io", "te$t$tudent");
-        choosePlaylistByName("ara");
+        choosePlaylistByName("toy");
         displayAllSongs();
         Assert.assertTrue(getPlaylistDetails().contains(String.valueOf(countSongs())));
     }
@@ -97,7 +97,7 @@ public class ActionsTests extends BaseTest {
         //(By.cssSelector("[href='#!/playlist/93973']")))
     }
     public void displayAllSongs(){
-        List<WebElement>songList = getDriver().findElements(By.cssSelector("section#playlistWrapper td.title"));
+        List<WebElement>songList = driver.findElements(By.cssSelector("section#playlistWrapper td.title"));
         //count and display songs names
         System.out.println("Number of songs in the playlist:"+ countSongs());
         for(WebElement e : songList){
@@ -105,7 +105,7 @@ public class ActionsTests extends BaseTest {
         }
     }
     public int countSongs(){
-        return getDriver().findElements(By.cssSelector("section#playlistWrapper td.title")).size();
+        return driver.findElements(By.cssSelector("section#playlistWrapper td.title")).size();
     }
     public String getPlaylistDetails(){
         return waitUntilVisible(By.cssSelector("span.meta.text-secondary span.meta")).getText();

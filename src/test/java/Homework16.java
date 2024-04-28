@@ -11,10 +11,10 @@ import java.time.Duration;
 public class Homework16 extends BaseTest {
     @Test
     public void testRegistrationNavigation(){
-        LoginPage loginPage = new LoginPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
         String expectedRegistrationUrl = "https://qa.koel.app/registration";
         loginPage.findRegistrationLink();
-        Assert.assertEquals(getDriver().getCurrentUrl(), expectedRegistrationUrl);
+        Assert.assertEquals(driver.getCurrentUrl(), expectedRegistrationUrl);
 
     }
 
