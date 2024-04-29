@@ -1,17 +1,11 @@
 import POM.LoginPage;
 import POM.SongsPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
-public class Homework18 extends BaseTest {
+public class PlaySong extends BaseTest {
     @Test
-    public void playSong() {
+    public void playNewSong() {
         LoginPage loginPage = new LoginPage(driver);
         SongsPage songsPage = new SongsPage(driver);
         loginPage.login("grigore.crepciuc@testpro.io", "te$t$tudent");

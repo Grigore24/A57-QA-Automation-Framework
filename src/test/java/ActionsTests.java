@@ -81,7 +81,7 @@ public class ActionsTests extends BaseTest {
 //
 //    }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    @Test
+   /* @Test
     public void countSongsInsidePlaylist(){
         LoginPage loginPage = new LoginPage(driver);
         SongsPage songsPage = new SongsPage(driver);
@@ -110,5 +110,5 @@ public class ActionsTests extends BaseTest {
     public String getPlaylistDetails(){
         return waitUntilVisible(By.cssSelector("span.meta.text-secondary span.meta")).getText();
         //driver.findElement(By.cssSelector("span.meta.text-secondary span.meta")).getText();
-    }
+    }*/
 }

@@ -3,10 +3,10 @@ import POM.PlaylistPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Homework17 extends BaseTest {
+public class AddSongToPlaylist extends BaseTest {
 
     @Test
-    public void addSongToPlaylist() {
+    public void addSongToNewPlaylist() {
         LoginPage loginPage = new LoginPage(driver);
         PlaylistPage playlistPage = new PlaylistPage(driver);
         String text = "Dark Days";

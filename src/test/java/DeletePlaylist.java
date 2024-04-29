@@ -1,18 +1,13 @@
 import POM.BasePage;
 import POM.LoginPage;
 import POM.PlaylistPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Homework22 extends BaseTest {
+public class DeletePlaylist extends BaseTest {
 
     @Test
-    public void deletePlaylist() {
+    public void deleteNewPlaylist() {
         LoginPage loginPage = new LoginPage(driver);
         PlaylistPage playlistPage = new PlaylistPage(driver);
         BasePage basepage = new BasePage(driver);

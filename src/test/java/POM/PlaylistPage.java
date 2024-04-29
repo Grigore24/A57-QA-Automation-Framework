@@ -16,8 +16,9 @@ public class PlaylistPage extends BasePage{
         super(givenDriver);
     }
     //LOCATORS for Homework22 DeletePlaylist
-    private By plusBtn = By.cssSelector("[data-testid='sidebar-create-playlist-btn']");
-    private By createNewPlaylist = By.cssSelector("[data-testid='playlist-context-menu-create-simple']");
+    private By plusBtn = By.cssSelector("[class='fa fa-plus-circle create']");
+    //[data-testid='sidebar-create-playlist-btn']
+    private By createNewPlaylistLocator = By.cssSelector("[data-testid='playlist-context-menu-create-simple']");
     private By playlistNameInput = By.cssSelector(".create input");
     private By plNameInput = By.cssSelector("[id='songResultsWrapper'] [placeholder='Playlist name']");
     private By checkHeader = By.cssSelector("#playlistWrapper h1");
@@ -59,7 +60,7 @@ public class PlaylistPage extends BasePage{
         WebElement plusButton = waitUntilClickable(plusBtn);
         plusButton.click();
 
-        WebElement presNewPlaylistBtn = waitUntilClickable(createNewPlaylist);
+        WebElement presNewPlaylistBtn = waitUntilClickable(createNewPlaylistLocator);
         presNewPlaylistBtn.click();
 
         WebElement inputPlaylistName = waitUntilClickable(playlistNameInput);

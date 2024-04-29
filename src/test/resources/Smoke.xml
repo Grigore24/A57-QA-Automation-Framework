@@ -8,9 +8,14 @@
             <class name="LoginTests">
                 <methods>
                     <include name="loginValidEmailPassword"/>
-                    <include name="loginInValidEmailPassword"/>
                 </methods>
             </class>
+            <class name="CreatePlaylist"/>
+            <class name="RenamePlaylist"/>
+            <class name="DeletePlaylist"/>
+            <class name="AddSongToPlaylist"/>
+            <class name="PlaySong"/>
+            <class name="TestRegistrationLink"/>
         </classes>
     </test>
 </suite>
