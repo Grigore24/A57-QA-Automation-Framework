@@ -16,8 +16,8 @@ public class PlaylistPage extends BasePage{
         super(givenDriver);
     }
     //LOCATORS for Homework22 DeletePlaylist
-    private By plusBtn = By.cssSelector("[class='fa fa-plus-circle create']");
-    //[data-testid='sidebar-create-playlist-btn']
+    private By plusBtn = By.cssSelector("[data-testid='sidebar-create-playlist-btn']");
+    //[class='fa fa-plus-circle create']
     private By createNewPlaylistLocator = By.cssSelector("[data-testid='playlist-context-menu-create-simple']");
     private By playlistNameInput = By.cssSelector(".create input");
     private By plNameInput = By.cssSelector("[id='songResultsWrapper'] [placeholder='Playlist name']");
@@ -57,8 +57,9 @@ public class PlaylistPage extends BasePage{
         return newName;
     }
     public void createNewPlaylistUsingPlusBtn(String playlistName) {
-        WebElement plusButton = waitUntilClickable(plusBtn);
-        plusButton.click();
+        clickButtonPlusCreatePlaylist();
+//        WebElement plusButton = waitUntilClickable(plusBtn);
+//        plusButton.click();
 
         WebElement presNewPlaylistBtn = waitUntilClickable(createNewPlaylistLocator);
         presNewPlaylistBtn.click();
@@ -71,6 +72,15 @@ public class PlaylistPage extends BasePage{
         new Actions(driver)
                 .keyDown(Keys.ENTER)
                 .perform();
+    }
+    public void clickButtonPlusCreatePlaylist(){
+        WebElement buttonPlus = waitUntilClickable(plusBtn);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        buttonPlus.click();
     }
     public void checkPlayListHeader(String playlistName) {
         WebElement playlistHeader = waitUntilVisible(checkHeader);
